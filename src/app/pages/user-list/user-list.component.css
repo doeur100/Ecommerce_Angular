@@ -1,0 +1,17 @@
+input[type='checkbox'] {
+    width:20px;
+    height:20px;
+}
+
+/* .custom-table {
+    width:100%;
+} */
+.custom-table th, td {
+    padding: 20px !important; 
+    border-bottom:1px solid rgb(121, 120, 120);
+
+}
+
+.custom-table th,td {
+    text-align:left;
+}

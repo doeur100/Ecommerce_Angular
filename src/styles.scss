@@ -1,0 +1,16 @@
+// 1️⃣ Override Bootstrap variables
+$primary: #ff6600;   // Change Bootstrap primary color
+$btn-border-radius: 10px; // Customize button border radius
+
+// 2️⃣ Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+// @import "node_modules/bootstrap/scss/bootstrap";
+
+
+
+// 3️⃣ Add custom styles
+.custom-btn {
+  background-color: $primary;
+  padding: 10px;
+  border-radius: $btn-border-radius;
+}
