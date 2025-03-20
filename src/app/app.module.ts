@@ -10,9 +10,17 @@ import { AboutComponent } from './pages/about/about.component';
 import { SlideComponent } from './components/slide/slide.component';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { DialogDetailComponent } from './components/dialog-detail/dialog-detail.component';
-import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { UserListComponent } from './pages/user-list/user-list.component';
+
+
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +32,10 @@ import { UserListComponent } from './pages/user-list/user-list.component';
     DialogDetailComponent,
     MatIconModule,
     CommonModule,
-    UserListComponent
+    UserListComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
