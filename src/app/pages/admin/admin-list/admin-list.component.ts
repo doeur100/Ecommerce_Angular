@@ -1,26 +1,43 @@
 import { Component } from '@angular/core';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { MatIconModule } from '@angular/material/icon';
+
 export interface PeriodicElement {
-  position: number;
+  ID: number;
   name: string;
-  weight: number;
-  symbol: string;
+  email: string;
+  age: number;
+  gender: string;
+  dob: string;
+  address: string;
+  city: string;
+  skills: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
+  { ID: 1, name: 'John Doe', email: 'john@example.com', age: 25, gender: 'Male', dob: '1999-01-15', address: '123 Main St', city: 'New York', skills: 'Angular, TypeScript' },
+  { ID: 2, name: 'Jane Doe', email: 'jane@example.com', age: 30, gender: 'Female', dob: '1994-07-23', address: '456 Park Ave', city: 'Los Angeles', skills: 'Vue, JavaScript' },
+  { ID: 3, name: 'Alice Brown', email: 'alice@example.com', age: 28, gender: 'Female', dob: '1996-04-12', address: '789 Elm St', city: 'Chicago', skills: 'React, Node.js' },
+  { ID: 4, name: 'Bob Smith', email: 'bob@example.com', age: 35, gender: 'Male', dob: '1989-11-30', address: '321 Oak St', city: 'Houston', skills: 'Python, Django' },
 ];
 
 @Component({
   selector: 'app-admin-list',
   templateUrl: './admin-list.component.html',
-  imports: [MatTableModule],
-  styleUrls: ['./admin-list.component.css'] // Fixed "styleUrl" to "styleUrls"
+  styleUrls: ['./admin-list.component.css'],
+  standalone: true,
+  imports: [MatTableModule,MatIconModule]
 })
 export class AdminListComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  displayedColumns: string[] = ['ID', 'name', 'email', 'age', 'gender', 'dob', 'address', 'city', 'skills', 'actions'];
   dataSource = ELEMENT_DATA;
+
+  editUser(element: PeriodicElement) {
+    console.log('Editing user:', element);
+  }
+
+  deleteUser(element: PeriodicElement) {
+    console.log('Deleting user:', element);
+    this.dataSource = this.dataSource.filter(user => user.ID !== element.ID);
+  }
 }
