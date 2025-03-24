@@ -11,6 +11,7 @@ export const routes: Routes = [
   {path: 'about', component: AboutComponent},// Default route
   {path: 'login', component: LoginComponent},
   {path: 'category', component: CategoryComponent},
-  {path: 'userList', component: UserListComponent}
+  {path: 'userList', component: UserListComponent},
+  {path: 'books', loadChildren: () => import('./pages/books/books-routing.module').then(m => m.BooksRoutingModule)},
 //   { path: 'contact', component: ContactComponent } // Contact page
 ];
