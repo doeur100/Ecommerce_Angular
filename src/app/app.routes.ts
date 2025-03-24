@@ -13,5 +13,6 @@ export const routes: Routes = [
   {path: 'category', component: CategoryComponent},
   {path: 'userList', component: UserListComponent},
   {path: 'books', loadChildren: () => import('./pages/books/books-routing.module').then(m => m.BooksRoutingModule)},
+  {path: 'admins', loadChildren: () => import('./pages/admin/admin-routing.module').then(m => m.AdminRoutingModule)}
 //   { path: 'contact', component: ContactComponent } // Contact page
 ];
