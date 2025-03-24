@@ -1,0 +1,13 @@
+
+  table {
+    width:100%;
+    background:none;
+}
+table, th, td {
+      border:1px solid black;
+      text-align:center;
+  }
+  th {
+    background-color: rgb(170, 231, 231) !important;
+  }
+  
