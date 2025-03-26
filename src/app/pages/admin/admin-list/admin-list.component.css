@@ -5,9 +5,13 @@
 }
 table, th, td {
       border:1px solid black;
-      text-align:center;
+      text-align:left;
   }
   th {
-    background-color: rgb(170, 231, 231) !important;
+    background-color: rgb(162, 197, 241) !important;
   }
   
+
+input {
+  width:250px;
+}

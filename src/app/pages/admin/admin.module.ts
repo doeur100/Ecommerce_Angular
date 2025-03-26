@@ -5,16 +5,19 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminListComponent } from './admin-list/admin-list.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
   declarations: [
-    AdminListComponent
+    AdminListComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
-    MatIconModule
+    MatIconModule,
+    MatExpansionModule
+
     // MatTableModule
   ]
 })

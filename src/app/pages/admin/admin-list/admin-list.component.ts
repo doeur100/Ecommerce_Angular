@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule} from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
+const PAGE_KEY = 'ENTERPRISE_LIST';
 
 export interface PeriodicElement {
   ID: number;
@@ -26,7 +31,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
   templateUrl: './admin-list.component.html',
   styleUrls: ['./admin-list.component.css'],
   standalone: true,
-  imports: [MatTableModule,MatIconModule]
+  imports: [MatTableModule,MatIconModule,MatInputModule,MatFormFieldModule,FormsModule,MatExpansionModule]
 })
 export class AdminListComponent {
   displayedColumns: string[] = ['ID', 'name', 'email', 'age', 'gender', 'dob', 'address', 'city', 'skills', 'actions'];
@@ -40,4 +45,25 @@ export class AdminListComponent {
     console.log('Deleting user:', element);
     this.dataSource = this.dataSource.filter(user => user.ID !== element.ID);
   }
+
+  filter: Filter = {
+    page_key: PAGE_KEY,
+    search: '',
+    status: undefined,
+    page_index: 1,
+    page_size: 10,
+  };
+
+  onSelectStatus(status: any) {
+    this.filter.status = status;
+  }
+
+}
+interface Filter {
+  page_key: string;
+  search?: string;
+  status?: string;
+  [key: string]: any,
+  page_index: number;
+  page_size: number;
 }

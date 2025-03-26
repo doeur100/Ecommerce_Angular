@@ -1,4 +1,51 @@
 <div class="m-5">
+  <div class="m-form d-flex form-group col-md-4 col-lg-4 mb-3">
+    <div class="me-5"> <!-- Adds right margin to create space -->
+      <label>From Date</label>
+      <input type="date" id="fromDate" class="form-control " />
+    </div>
+    <div>
+      <label>To Date</label>
+      <input type="date" id="toDate" class="form-control" />
+    </div>
+  </div>
+
+
+
+
+  <div class="form-row">
+    <div class="col-sm-12 col-md-12 col-lg-12">
+      <mat-accordion>
+        <mat-expansion-panel class="mat-elevation-z border-form-control">
+          <mat-expansion-panel-header>
+            <!-- <mat-icon>content_paste_search</mat-icon> {{ "filter_more" }} -->
+          </mat-expansion-panel-header>
+          <div class="row mt-0">
+            <div class="col-xl-9 px-0">
+              <!-- <app-address-filter formControlName="address"></app-address-filter> -->
+            </div>
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+
+
+  <!-- <div class="m-form form-group col-md-4 col-lg-3 mb-3">
+    <label>{{ "status"  }}</label>
+    <app-select formControlName="status" (selectChange)="onSelectStatus($event)">
+      <app-option [value]="null">{{"all" }}</app-option>
+      <app-option [value]="STATUS.DRAFT">{{"draft" }}</app-option>
+      <app-option [value]="STATUS.SUBMITTED">{{"submitted" }}</app-option>
+      <app-option [value]="STATUS.RETURNED">{{"returned" }}</app-option>
+      <app-option [value]="STATUS.REJECTED">{{"rejected" }}</app-option>
+      <app-option [value]="STATUS.ACCEPTED">{{"accepted" }}</app-option>
+      <app-option [value]="STATUS.APPROVED">{{ 'approved' }}</app-option>
+    </app-select>
+  </div> -->
+
+
+  
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
       <!-- ID Column -->
       <ng-container matColumnDef="ID">
@@ -59,7 +106,7 @@
         <th mat-header-cell *matHeaderCellDef> Actions </th>
         <td mat-cell *matCellDef="let element" class=" "> 
           <div class="d-flex justify-content-center gap-2">
-            <div class="d-flex align-items-center bg-dark p-2 w-10 text-white">
+            <div class="d-flex align-items-center bg-primary p-2  text-white">
               <mat-icon class="text-white">edit</mat-icon>
               <span mat-button (click)="editUser(element)">Edit</span>
             </div>
